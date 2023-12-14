@@ -1,6 +1,6 @@
 #!/bin/bash
 
-DATE=$(date +%Y-%m-%d-%H:%M)
+DATE=$(date +%Y-%m-%d)
 
 #Generate a stress task in controllers
 
@@ -20,4 +20,3 @@ do
     curl -k -X "PATCH" -H "Content-Type: application/json" -H "X-Auth-Token: $_TOKEN_" -d '{"insert": {"rules": [{"comment": "Custom WP Rule", "from": "'group-$i'", "applications": ["MYSQL"], "ports": "any", "to": "mydb", "action": "allow", "id": 0}], "after": 0}}' "https://$_controllerIP_:$_controllerRESTAPIPort_/v1/policy/rule"
     curl -k -X 'DELETE' -H "Content-Type: application/json" -H "X-Auth-Token: $_TOKEN_" "https://$_controllerIP_:$_controllerRESTAPIPort_/v1/auth" 
 done
-
