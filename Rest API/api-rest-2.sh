@@ -1,6 +1,6 @@
 #!/bin/bash
 
-DATE=$(date +%Y-%m-%d-%H:%M)
+DATE=$(date +%Y-%m-%d)
 
 #Generate a stress task in controllers
 
