@@ -2,7 +2,7 @@
 
 #Generate a stress task in controllers
 
-DATE=$(date +%Y-%m-%d-%H:%M)
+DATE=$(date +%Y-%m-%d)
 
 #NeuVector ENV
 _controllerIP_=""
@@ -11,7 +11,7 @@ _neuvectorUsername_="admin"
 _neuvectorPassword_=""
 
 
-#The snippet below will perform various system queries in NeuVector's Eula, where the controller will be responsible for delivering this data.
+#The snippet below will perform various system queries in NeuVector's Eula, where the controller will deliver this data.
 curl -k -H "Content-Type: application/json" -d '{"password": {"username": "'$_neuvectorUsername_'", "password": "'$_neuvectorPassword_'"}}' "https://$_controllerIP_:$_controllerRESTAPIPort_/v1/auth" > /dev/null 2>&1 > token.json
 _TOKEN_=`cat token.json | jq -r '.token.token'`
 
