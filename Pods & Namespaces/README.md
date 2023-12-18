@@ -1,6 +1,9 @@
 #### Instructions for execution
 
-The "apply-files.sh" script is the first one you should run, as it is the basis for the next scripts. You can customize the number of requests created, namespaces, deployments and pods.
+The "apply-files.sh" script is the first one you should run, as it is the basis for the next scripts. You can customize the number of requests created, namespaces, deployments, and pods.
+
+##### NOTE: Before running the scripts, please test your connection to the Kubernetes & NeuVector cluster and make sure your kubeconfig is correctly mapped.
+
 
 #### Parallel executions
 
